@@ -1,0 +1,205 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  cursor: grab;
+  z-index: 1;
+  background-color: #E4EBF5;
+  position: fixed;
+}
+
+.grabbing {
+  cursor: grabbing;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-start; /* Move the header to the top */
+  align-items: center;
+  height: 60px; /* Adjust the header height as needed */
+  padding: 10px 20px; /* Add padding to the header */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999; /* Ensure the header is on top of other content */
+  font-family: 'Courier New', Courier, monospace; /* Use the Courier font family */
+  font-size: 24px; /* Adjust the font size as needed */
+  font-weight: bold; /* Make the text bold */
+}
+
+
+.logo {
+  max-width: 100%; /* Make the logo responsive */
+  height: auto; /* Maintain the aspect ratio */
+}
+  
+.mainContainer {
+  display: flex;
+  padding: 2%;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Courier New', Courier, monospace;
+  background-image: url('/images/legobg.gif'); /* Replace with the path to your background image */
+  background-size: auto; /* Set the background size to its original size */
+  background-repeat: repeat; /* Make the background image repeat */
+  
+}
+
+.gif {
+  /* Define styles for your GIF here, such as width, height, margin, etc. */
+}
+
+.centeredText {
+  font-size: 18px; /* Adjust the font size as needed */
+  text-align: center;
+  margin-top: 20px; /* Adjust the margin as needed */
+}
+
+.mintNowImage {
+  max-width: 100%;
+  height: auto;
+  margin-top: 1.5%; /* Adjust the margin as needed */
+  transition: transform 0.2s ease-in-out; /* Add a transition for the transform property */
+}
+
+.mintNowImage:hover {
+  transform: scale(1.05); /* Enlarge the button slightly on hover */
+}
+
+.mintNowImage:active {
+  transform: scale(0.95); /* Reduce the button size slightly when clicked */
+}
+
+
+.linksContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* Adjust the margin as needed */
+}
+
+.link {
+  text-decoration: none;
+  margin: 0 10px; /* Adjust the margin between links as needed */
+  font-size: 16px; /* Adjust the font size as needed */
+  color: blue; /* Make the links blue */
+  transition: text-decoration 0.3s; /* Add transition for the underline */
+}
+
+.link:hover {
+  text-decoration: underline; /* Underline the link on hover */
+}
+
+.fixedLogo {
+  position: fixed;
+  top: 10px; /* Adjust the top position for padding */
+  right: 10px; /* Adjust the right position for padding */
+  z-index: 1; /* Ensure the logo is on top of other content */
+}
+
+@media (max-width: 768px) {
+  .fixedLogo {
+    display: none; /* Hide the fixed logo on mobile screens */
+  }
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.text {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.imagesContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+  margin: 0 10px; /* Adjust the margin between images as needed */
+}
+
+.subtitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.mintingImage {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+
+.mintingText {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 550; /* Adjust the font weight to make it slightly more bold */
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  padding: 0 10px;
+  width: 100%;
+}
+
+.footerLink {
+  text-decoration: none;
+  color: blue;
+  font-size: 16px;
+}
+
+.footerLink:hover {
+  text-decoration: underline; /* Underline the link on hover */
+}
+
+.smallImage  {
+  margin-left: 10px;
+}
+
+.toggleContainer {
+  background-color: #E4EBF5;
+  z-index: 5;
+  width: 80px;
+  height: 30px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: fixed;
+  right: 1%; /* Adjust as needed for right margin */
+  bottom: 1%; /* Adjust as needed for bottom margin */
+  box-shadow: 
+    6px 6px 15px #bebebe, /* darker shadow on bottom right */
+    -6px -6px 15px rgba(255, 255, 255, 0.8); /* slight white glow on top left */
+}
+
+.toggleCircle {
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  border-radius: 100%;
+  box-shadow: 
+    2px 2px 5px #bebebe, /* shadow on bottom right */
+    -2px -2px 5px #ffffff; /* lighter shadow on top left */
+  transition: transform 0.3s ease-in-out; /* Updated animation */
+}
+
+.on {
+  transform: translateX(53px);
+}
+
+.off {
+  transform: translateX(4px);
+}
