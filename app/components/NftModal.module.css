@@ -26,6 +26,33 @@
   animation: modalAppear 0.3s ease-out;
 }
 
+@media (max-width: 768px) {
+  .modalContent {
+    padding: 20px 15px;
+    width: 95%;
+    max-height: 90vh;
+    border-width: 1px;
+    box-shadow: 4px 4px 0 #000;
+  }
+  
+  .modalBackdrop {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modalContent {
+    padding: 15px 10px;
+    width: 97%;
+    max-height: 95vh;
+    box-shadow: 3px 3px 0 #000;
+  }
+  
+  .modalBackdrop {
+    padding: 5px;
+  }
+}
+
 @keyframes modalAppear {
   from {
     opacity: 0;
@@ -61,6 +88,30 @@
   align-items: flex-start;
 }
 
+@media (max-width: 768px) {
+  .modalInner {
+    gap: 15px;
+  }
+  
+  .closeButton {
+    font-size: 24px;
+    top: 8px;
+    right: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modalInner {
+    gap: 10px;
+  }
+  
+  .closeButton {
+    font-size: 22px;
+    top: 5px;
+    right: 10px;
+  }
+}
+
 .imageContainer {
   flex: 1;
   min-width: 300px;
@@ -75,6 +126,21 @@
   padding-bottom: 50px;
 }
 
+@media (max-width: 768px) {
+  .imageContainer {
+    min-width: 100%;
+    min-height: 300px;
+    padding-bottom: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .imageContainer {
+    min-height: 250px;
+    padding-bottom: 30px;
+  }
+}
+
 .imageWrapper {
   position: relative;
   width: 100%;
@@ -83,6 +149,20 @@
   align-items: center;
   min-height: 300px;
   margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+  .imageWrapper {
+    min-height: 250px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .imageWrapper {
+    min-height: 200px;
+    margin-bottom: 15px;
+  }
 }
 
 .enlargedImage {
@@ -94,6 +174,21 @@
   max-height: 350px;
   height: auto;
   transition: opacity 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .enlargedImage {
+    max-height: 250px;
+    border-width: 1px;
+    box-shadow: 3px 3px 0 #000;
+  }
+}
+
+@media (max-width: 480px) {
+  .enlargedImage {
+    max-height: 200px;
+    box-shadow: 2px 2px 0 #000;
+  }
 }
 
 .imageLoading {
@@ -142,6 +237,40 @@
   right: -18px;
 }
 
+@media (max-width: 768px) {
+  .navArrow {
+    width: 30px;
+    height: 30px;
+    font-size: 22px;
+    box-shadow: 1px 1px 0 #000;
+    border-width: 1px;
+  }
+  
+  .prevArrow {
+    left: -15px;
+  }
+  
+  .nextArrow {
+    right: -15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navArrow {
+    width: 26px;
+    height: 26px;
+    font-size: 18px;
+  }
+  
+  .prevArrow {
+    left: -13px;
+  }
+  
+  .nextArrow {
+    right: -13px;
+  }
+}
+
 .navArrow:hover {
   background-color: #fffaed;
   transform: translateY(-50%) scale(1.1);
@@ -166,6 +295,13 @@
   z-index: 3;
 }
 
+@media (max-width: 480px) {
+  .imageInfo {
+    bottom: 10px;
+    left: 5px;
+  }
+}
+
 .imageType {
   font-weight: bold;
   background-color: #f0f0f0;
@@ -182,36 +318,15 @@
   margin-left: 10px;
 }
 
-.imageDots {
-  display: flex;
-  justify-content: center;
-  gap: 6px;
-  position: absolute;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 4;
-}
-
-.dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: #ccc;
-  border: 1px solid #000;
-  cursor: pointer;
-  padding: 0;
-  transition: all 0.2s ease;
-}
-
-.activeDot {
-  background-color: #3290ff;
-  transform: scale(1.1);
-}
-
-.dot:hover {
-  transform: scale(1.1);
-  background-color: #999;
+@media (max-width: 480px) {
+  .imageType, .imageCounter {
+    padding: 3px 6px;
+    font-size: 12px;
+  }
+  
+  .imageCounter {
+    margin-left: 6px;
+  }
 }
 
 .noImage {
@@ -225,6 +340,15 @@
   font-family: 'Courier New', Courier, monospace;
   color: #666;
   margin-bottom: 15px;
+}
+
+@media (max-width: 480px) {
+  .noImage {
+    height: 150px;
+    border-width: 1px;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
 }
 
 .view3dButton {
@@ -253,6 +377,22 @@
   background-color: #0066cc;
 }
 
+@media (max-width: 768px) {
+  .view3dButton {
+    padding: 10px 18px;
+    font-size: 14px;
+    box-shadow: 2px 2px 0 #000;
+    align-self: center;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  
+  .view3dButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 3px 3px 0 #000;
+  }
+}
+
 .metadataContainer {
   flex: 1;
   min-width: 300px;
@@ -262,6 +402,12 @@
   flex-direction: column;
 }
 
+@media (max-width: 768px) {
+  .metadataContainer {
+    min-width: 100%;
+  }
+}
+
 .nftTitle {
   font-size: 24px;
   font-weight: bold;
@@ -269,6 +415,23 @@
   margin-bottom: 15px;
   border-bottom: 2px solid #000;
   padding-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .nftTitle {
+    font-size: 20px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .nftTitle {
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+  }
 }
 
 .attributesContainer {
@@ -282,10 +445,30 @@
   margin: 0 0 10px 0;
 }
 
+@media (max-width: 768px) {
+  .attributesTitle {
+    font-size: 16px;
+    text-align: center;
+  }
+}
+
 .attributesList {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
   gap: 8px;
+}
+
+@media (max-width: 768px) {
+  .attributesList {
+    gap: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .attributesList {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 5px;
+  }
 }
 
 .attributeItem {
@@ -295,6 +478,12 @@
   padding: 8px;
   display: flex;
   flex-direction: column;
+}
+
+@media (max-width: 480px) {
+  .attributeItem {
+    padding: 6px;
+  }
 }
 
 .attributeType {
@@ -309,11 +498,33 @@
   word-break: break-word;
 }
 
+@media (max-width: 480px) {
+  .attributeType {
+    font-size: 10px;
+  }
+  
+  .attributeValue {
+    font-size: 12px;
+  }
+}
+
 .loadingContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 300px;
+}
+
+@media (max-width: 768px) {
+  .loadingContainer {
+    min-height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .loadingContainer {
+    min-height: 200px;
+  }
 }
 
 .loadingBox {
@@ -322,6 +533,20 @@
   font-family: 'Courier New', Courier, monospace;
   font-size: 18px;
   font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .loadingBox {
+    padding: 15px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .loadingBox {
+    padding: 10px;
+    font-size: 14px;
+  }
 }
 
 .loadingAnimation {
@@ -377,4 +602,18 @@
   color: #ff3b3b;
   padding: 40px;
   font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .errorMessage {
+    padding: 30px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .errorMessage {
+    padding: 20px;
+    font-size: 14px;
+  }
 } 

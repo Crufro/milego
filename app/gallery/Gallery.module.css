@@ -38,4 +38,46 @@
   max-width: 100%;
 }
 
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .galleryContainer {
+    padding: 4%;
+  }
+  
+  .title {
+    font-size: 20px;
+  }
+  
+  .text {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+  
+  .contractCode {
+    font-size: 12px;
+    padding: 3px 6px;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .galleryContainer {
+    padding: 5%;
+  }
+  
+  .title {
+    font-size: 18px;
+  }
+  
+  .text {
+    font-size: 14px;
+    padding: 0 5px;
+  }
+  
+  .contractCode {
+    font-size: 11px;
+    padding: 2px 4px;
+  }
+}
+
 /* Add more styles as needed */ 

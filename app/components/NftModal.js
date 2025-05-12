@@ -203,21 +203,6 @@ export default function NftModal({ isOpen, onClose, tokenId, formattedId }) {
                     )}
                   </div>
                   
-                  {availableImages.length > 1 && (
-                    <div className={styles.imageDots}>
-                      {availableImages.map((_, index) => (
-                        <button 
-                          key={index} 
-                          className={`${styles.dot} ${currentImageIndex === index ? styles.activeDot : ''}`}
-                          onClick={() => {
-                            setImageLoading(true);
-                            setCurrentImageIndex(index);
-                          }}
-                        />
-                      ))}
-                    </div>
-                  )}
-                  
                   <div className={styles.imageInfo}>
                     <span className={styles.imageType}>{currentImage.label}</span>
                     {availableImages.length > 1 && (

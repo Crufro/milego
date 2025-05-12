@@ -70,6 +70,8 @@
   cursor: pointer;
   transition: all 0.2s ease;
   box-shadow: 2px 2px 0 #000;
+  min-width: 60px;
+  text-align: center;
 }
 
 .pageButton:hover:not(:disabled) {
@@ -108,20 +110,96 @@
   .nftGrid {
     grid-template-columns: repeat(3, 1fr);
   }
+  
+  .galleryContainer {
+    margin: 20px auto;
+    padding: 15px;
+  }
+  
+  .galleryTitle {
+    font-size: 22px;
+  }
 }
 
 @media (max-width: 600px) {
   .nftGrid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
   }
   
   .controlsContainer {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
   }
   
-  .pagination {
-    margin-top: 15px;
+  .pagination, .paginationBottom {
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .pageButton {
+    padding: 6px 10px;
+    font-size: 14px;
+    min-width: 50px;
+  }
+  
+  .pageInfo {
+    min-width: 100px;
+    font-size: 14px;
+    order: -1;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+  
+  .galleryContainer {
+    margin: 10px auto;
+    padding: 10px;
+    border-width: 1px;
+    box-shadow: 3px 3px 0 #000;
+  }
+  
+  .galleryTitle {
+    font-size: 20px;
+    margin: 0 0 15px 0;
+  }
+  
+  .pageSizeControl {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nftGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .pageButton {
+    padding: 4px 0;
+    font-size: 12px;
+    min-width: 40px;
+    flex: 1;
+    max-width: 60px;
+    box-shadow: 1px 1px 0 #000;
+    border-width: 1px;
+  }
+  
+  .pageInfo {
+    padding: 5px;
+    font-size: 12px;
+    min-width: 90px;
+  }
+  
+  .pagination, .paginationBottom {
+    gap: 5px;
+  }
+  
+  .galleryContainer {
+    padding: 8px;
   }
 }
 
@@ -220,6 +298,35 @@
   box-shadow: 3px 3px 0 #000;
 }
 
+@media (max-width: 600px) {
+  .nftItem {
+    border-width: 1px;
+    padding: 8px;
+  }
+  
+  .nftItem:hover {
+    box-shadow: 3px 3px 0 #000;
+  }
+  
+  .nftInfo {
+    padding: 8px 4px;
+  }
+  
+  .nftId {
+    font-size: 14px;
+  }
+  
+  .viewButton {
+    font-size: 12px;
+    padding: 5px 6px;
+    box-shadow: 1px 1px 0 #000;
+  }
+  
+  .viewButton:hover {
+    box-shadow: 2px 2px 0 #000;
+  }
+}
+
 .loadingContainer {
   display: flex;
   justify-content: center;
@@ -237,6 +344,19 @@
   font-family: 'Courier New', Courier, monospace;
   font-size: 18px;
   font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .loadingContainer {
+    min-height: 200px;
+  }
+  
+  .loadingBox {
+    padding: 15px;
+    border-width: 1px;
+    box-shadow: 2px 2px 0 #000;
+    font-size: 16px;
+  }
 }
 
 .loadingAnimation {

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './NftGallery.module.css';
@@ -16,6 +16,7 @@ export default function NftGallery() {
   const [isLoading, setIsLoading] = useState(true);
   const [selectedNft, setSelectedNft] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   
   // Calculate total pages
   const totalPages = Math.ceil(MAX_NFT_ID / pageSize);
@@ -36,6 +37,22 @@ export default function NftGallery() {
     setIsLoading(false);
   }, [currentPage, pageSize]);
 
+  // Check if screen is mobile size
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth <= 480);
+    };
+    
+    // Initial check
+    checkIfMobile();
+    
+    // Add event listener for window resize
+    window.addEventListener('resize', checkIfMobile);
+    
+    // Clean up
+    return () => window.removeEventListener('resize', checkIfMobile);
+  }, []);
+
   // Format token ID for URL (pad with leading zeros to 4 digits)
   const formatTokenId = (id) => {
     return String(id).padStart(4, '0');
@@ -45,7 +62,6 @@ export default function NftGallery() {
   const handlePageChange = (newPage) => {
     if (newPage >= 1 && newPage <= totalPages) {
       setCurrentPage(newPage);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
@@ -54,6 +70,8 @@ export default function NftGallery() {
     const newPageSize = Number(event.target.value);
     setPageSize(newPageSize);
     setCurrentPage(1); // Reset to first page when changing page size
+    // Scroll to top only when changing page size
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
   
   // Handle opening the modal when clicking on an NFT
@@ -92,14 +110,14 @@ export default function NftGallery() {
             disabled={currentPage === 1}
             className={styles.pageButton}
           >
-            First
+            {isMobile ? '1st' : 'First'}
           </button>
           <button 
             onClick={() => handlePageChange(currentPage - 1)} 
             disabled={currentPage === 1}
             className={styles.pageButton}
           >
-            Prev
+            {isMobile ? '←' : 'Prev'}
           </button>
           <span className={styles.pageInfo}>
             Page {currentPage} of {totalPages}
@@ -109,14 +127,14 @@ export default function NftGallery() {
             disabled={currentPage === totalPages}
             className={styles.pageButton}
           >
-            Next
+            {isMobile ? '→' : 'Next'}
           </button>
           <button 
             onClick={() => handlePageChange(totalPages)} 
             disabled={currentPage === totalPages}
             className={styles.pageButton}
           >
-            Last
+            {isMobile ? 'Last' : 'Last'}
           </button>
         </div>
       </div>
@@ -186,14 +204,14 @@ export default function NftGallery() {
           disabled={currentPage === 1}
           className={styles.pageButton}
         >
-          First
+          {isMobile ? '1st' : 'First'}
         </button>
         <button 
           onClick={() => handlePageChange(currentPage - 1)} 
           disabled={currentPage === 1}
           className={styles.pageButton}
         >
-          Prev
+          {isMobile ? '←' : 'Prev'}
         </button>
         <span className={styles.pageInfo}>
           Page {currentPage} of {totalPages}
@@ -203,14 +221,14 @@ export default function NftGallery() {
           disabled={currentPage === totalPages}
           className={styles.pageButton}
         >
-          Next
+          {isMobile ? '→' : 'Next'}
         </button>
         <button 
           onClick={() => handlePageChange(totalPages)} 
           disabled={currentPage === totalPages}
           className={styles.pageButton}
         >
-          Last
+          {isMobile ? 'Last' : 'Last'}
         </button>
       </div>
       

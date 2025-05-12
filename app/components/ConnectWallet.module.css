@@ -64,6 +64,30 @@
   box-shadow: 5px 5px 0 #000;
 }
 
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .connectButton, .wrongNetworkButton, .accountButton {
+    font-size: 16px;
+    padding: 8px 16px;
+    box-shadow: 2px 2px 0 #000;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .connectButton:hover, .accountButton:hover {
+    transform: scale(1.03);
+    box-shadow: 3px 3px 0 #000;
+  }
+}
+
+@media (max-width: 480px) {
+  .connectButton, .wrongNetworkButton, .accountButton {
+    font-size: 14px;
+    padding: 7px 14px;
+    border-width: 1px;
+  }
+}
+
 .connectedContainer {
   display: flex;
   flex-direction: column;
@@ -111,12 +135,50 @@
 @media (max-width: 900px) {
   .tokenGrid {
     grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+  
+  .tokenList {
+    padding: 15px;
+    border-width: 1px;
+    box-shadow: 2px 2px 0 #000;
+  }
+  
+  .tokenTitle {
+    font-size: 20px;
+    margin-bottom: 15px;
   }
 }
 
 @media (max-width: 600px) {
   .tokenGrid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .tokenList {
+    padding: 10px;
+    margin-top: 10px;
+  }
+  
+  .tokenTitle {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tokenGrid {
+    gap: 8px;
+  }
+  
+  .tokenList {
+    padding: 8px;
+  }
+  
+  .tokenTitle {
+    font-size: 16px;
+    margin-bottom: 10px;
   }
 }
 
@@ -171,11 +233,33 @@
   background-color: #f9f9f9;
 }
 
+@media (max-width: 600px) {
+  .nftCard {
+    padding: 8px 0;
+  }
+  
+  .tokenItem {
+    border-width: 1px;
+    padding: 8px;
+  }
+  
+  .tokenItem:hover {
+    box-shadow: 3px 3px 0 #000;
+  }
+}
+
 .tokenId {
   font-family: 'Courier New', Courier, monospace;
   font-size: 16px;
   font-weight: bold;
   margin: 8px 0;
+}
+
+@media (max-width: 600px) {
+  .tokenId {
+    font-size: 14px;
+    margin: 6px 0;
+  }
 }
 
 .tokenItem:hover .viewButton {
@@ -211,6 +295,12 @@
   font-weight: bold;
 }
 
+@media (max-width: 600px) {
+  .noTokens, .loadingText, .error, .totalCount {
+    font-size: 14px;
+  }
+}
+
 .balanceOnly {
   font-family: 'Courier New', Courier, monospace;
   font-size: 16px;
@@ -222,6 +312,16 @@
   border: 2px solid #000;
   border-radius: 8px;
   box-shadow: 3px 3px 0 #000;
+}
+
+@media (max-width: 600px) {
+  .balanceOnly {
+    font-size: 14px;
+    padding: 10px;
+    margin: 10px 0;
+    border-width: 1px;
+    box-shadow: 2px 2px 0 #000;
+  }
 }
 
 .thumbnailContainer {
@@ -246,6 +346,22 @@
   transform: scale(1.15);
 }
 
+@media (max-width: 600px) {
+  .thumbnailContainer {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .thumbnailContainer {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 6px;
+  }
+}
+
 .viewButton {
   font-family: 'Courier New', Courier, monospace;
   font-size: 14px;
@@ -268,6 +384,20 @@
   background-color: #0066cc;
   transform: translateY(-2px);
   box-shadow: 3px 3px 0 #000;
+}
+
+@media (max-width: 600px) {
+  .viewButton {
+    font-size: 12px;
+    padding: 5px 6px;
+    margin-top: 8px;
+    box-shadow: 1px 1px 0 #000;
+  }
+  
+  .viewButton:hover {
+    transform: translateY(-1px);
+    box-shadow: 2px 2px 0 #000;
+  }
 }
 
 .downloadLinks {
@@ -297,4 +427,15 @@
   background-color: #e0e0e0;
   transform: translateY(-2px);
   box-shadow: 2px 2px 0 #000;
+}
+
+@media (max-width: 600px) {
+  .downloadButton {
+    font-size: 10px;
+    padding: 2px 4px;
+  }
+  
+  .downloadLinks {
+    margin-top: 8px;
+  }
 } 

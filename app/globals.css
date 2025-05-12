@@ -17,7 +17,41 @@
 
 body {
   color: rgb(var(--foreground-rgb));
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
 
+/* Make sure images don't overflow containers */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make buttons and interactive elements larger for touch on mobile */
+@media (max-width: 768px) {
+  button, 
+  [role="button"],
+  a.button,
+  input[type="button"],
+  input[type="submit"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Increased spacing between clickable elements */
+  .clickable + .clickable {
+    margin-left: 8px;
+  }
+}
+
+/* Fix for iOS Safari's 100vh issue */
+@supports (-webkit-touch-callout: none) {
+  .min-h-screen {
+    min-height: -webkit-fill-available;
+  }
 }
 
 @layer utilities {
