@@ -13,7 +13,7 @@ const queryClient = new QueryClient();
 // Create wagmi config
 const { connectors } = getDefaultWallets({
   appName: 'MilegoMaker Gallery',
-  projectId: '3fbb7cf2d2b736b0270551f87e43836a', // Temporary development ID - replace with your own for production
+  projectId: 'f0c24c1a14a64ebd5569fa9cd4df9248', // Temporary development ID - replace with your own for production
   chains: [mainnet]
 });
 
