@@ -352,7 +352,7 @@ export default function ConnectWallet() {
                           )}
                         </>
                       ) : (
-                        <p className={styles.noTokens}>You don't own any MiLego NFTs</p>
+                        <p className={styles.noTokens}>You don&apos;t own any MiLego NFTs</p>
                       )}
                     </div>
                     

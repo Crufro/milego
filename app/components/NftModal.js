@@ -146,7 +146,7 @@ export default function NftModal({ isOpen, onClose, tokenId, formattedId }) {
     
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen, availableImages.length, onClose]);
+  }, [isOpen, availableImages.length, onClose, goToNextImage, goToPrevImage]);
 
   if (!isOpen) return null;
 

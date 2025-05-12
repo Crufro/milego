@@ -13,16 +13,17 @@ function Model({ modelPath }) {
 
 function CameraLogger() {
   const { camera } = useThree();
-  const logCameraPosition = () => {
-//    console.log('Camera Position:', camera.position);
-  };
   
   React.useEffect(() => {
+    const logCameraPosition = () => {
+//    console.log('Camera Position:', camera.position);
+    };
+    
     window.addEventListener('click', logCameraPosition);
     return () => {
       window.removeEventListener('click', logCameraPosition);
     };
-  }, [logCameraPosition]);
+  }, [camera]);
 
   return null; // This component doesn't render anything
 }
