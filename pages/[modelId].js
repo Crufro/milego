@@ -1,3 +1,4 @@
+//[modelId].js
 import React, { useState } from 'react';
 import ModelViewer from '../components/ModelViewer';
 import styles from '../app/Home.module.css';

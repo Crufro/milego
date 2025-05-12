@@ -1,0 +1,371 @@
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modalContent {
+  background-color: white;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  padding: 25px 20px;
+  border: 2px solid #000;
+  box-shadow: 6px 6px 0 #000;
+  animation: modalAppear 0.3s ease-out;
+}
+
+@keyframes modalAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #000;
+  font-weight: bold;
+  z-index: 10;
+}
+
+.closeButton:hover {
+  color: #ff3b3b;
+}
+
+.modalInner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: stretch;
+}
+
+.imageContainer {
+  flex: 1;
+  min-width: 300px;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-bottom: 0;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  min-height: 200px;
+}
+
+.enlargedImage {
+  border-radius: 8px;
+  border: 2px solid #000;
+  box-shadow: 4px 4px 0 #000;
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 350px;
+  height: auto;
+  transition: opacity 0.3s ease;
+}
+
+.imageLoading {
+  opacity: 0.5;
+}
+
+.imageLoadingOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+}
+
+.navArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 2px solid #000;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 26px;
+  line-height: 1;
+  z-index: 5;
+  padding: 0;
+  box-shadow: 2px 2px 0 #000;
+  transition: all 0.2s ease;
+}
+
+.prevArrow {
+  left: -10px;
+}
+
+.nextArrow {
+  right: -10px;
+}
+
+.navArrow:hover {
+  background-color: #fffaed;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 3px 3px 0 #000;
+}
+
+.navArrow:active {
+  transform: translateY(-50%) scale(0.95);
+  box-shadow: 1px 1px 0 #000;
+}
+
+.imageInfo {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 0 10px 0;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.imageType {
+  font-weight: bold;
+  background-color: #f0f0f0;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #000;
+}
+
+.imageCounter {
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  border: 1px solid #000;
+}
+
+.imageDots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 0 15px 0;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc;
+  border: 1px solid #000;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.activeDot {
+  background-color: #3290ff;
+  transform: scale(1.2);
+}
+
+.dot:hover {
+  transform: scale(1.2);
+  background-color: #999;
+}
+
+.activeDot:hover {
+  background-color: #3290ff;
+}
+
+.noImage {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  font-family: 'Courier New', Courier, monospace;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.view3dButton {
+  background-color: #3290ff;
+  color: white;
+  border: 2px solid #000;
+  border-radius: 6px;
+  padding: 14px 22px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 3px 3px 0 #000;
+  text-align: center;
+  margin-bottom: 20px;
+  width: fit-content;
+  align-self: flex-start;
+}
+
+.view3dButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 5px 5px 0 #000;
+  background-color: #0066cc;
+}
+
+.metadataContainer {
+  flex: 1;
+  min-width: 300px;
+  font-family: 'Courier New', Courier, monospace;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+
+.nftTitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #000;
+  padding-bottom: 10px;
+}
+
+.attributesContainer {
+  margin: 0;
+  width: 100%;
+}
+
+.attributesTitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+}
+
+.attributesList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 8px;
+}
+
+.attributeItem {
+  background-color: #f0f0f0;
+  border: 1px solid #000;
+  border-radius: 6px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.attributeType {
+  font-size: 12px;
+  color: #666;
+  text-transform: uppercase;
+}
+
+.attributeValue {
+  font-size: 14px;
+  font-weight: bold;
+  word-break: break-word;
+}
+
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}
+
+.loadingBox {
+  padding: 20px;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.loadingAnimation {
+  margin: 15px auto 0;
+  width: 50px;
+  height: 20px;
+  text-align: center;
+  font-size: 10px;
+  position: relative;
+}
+
+.loadingAnimation:before,
+.loadingAnimation:after,
+.loadingAnimation span {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: #3290ff;
+  position: absolute;
+  border-radius: 2px;
+  animation: loading 1.2s infinite ease-in-out;
+  border: 1px solid #000;
+}
+
+.loadingAnimation:before {
+  left: 0;
+  animation-delay: -0.32s;
+}
+
+.loadingAnimation span {
+  left: 20px;
+  animation-delay: -0.16s;
+}
+
+.loadingAnimation:after {
+  right: 0;
+}
+
+@keyframes loading {
+  0%, 80%, 100% { 
+    transform: scale(0);
+  }
+  40% { 
+    transform: scale(1.0);
+  }
+}
+
+.errorMessage {
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+  color: #ff3b3b;
+  padding: 40px;
+  font-weight: bold;
+} 

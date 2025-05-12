@@ -14,13 +14,13 @@ export default function Home() {
         <img src="/images/mint.png" alt="Mint Now" className={styles.mintNowImage} />
       </a>
       <div className={styles.linksContainer}>
-        <a href="https://opensea.io/collection/milego-maker" target="_blank" rel="noopener noreferrer" className={styles.link}>OpenSea</a>
+        <a href="/gallery" className={styles.link}>Gallery</a>
         <a href="https://twitter.com/MilegoMaker" target="_blank" rel="noopener noreferrer" className={styles.link}>Twitter</a>
         <a href="https://etherscan.io/address/0x2781d8fb4cf986547cc418a583908bfe92dbd8e5" target="_blank" rel="noopener noreferrer" className={styles.link}>Contract</a>
       </div>
       <img src="/images/logo.png" alt="Fixed Logo" className={styles.fixedLogo} />
       <h2 className={styles.title}>3D Files Included!</h2>
-      <p className={styles.text}>Every Milego comes with original 3D assets and files packaged for use in Blender 3D software.</p>
+      <p className={styles.text}>Every MiLego comes with original 3D assets and files packaged for use in Blender 3D software.</p>
       <div className={styles.imagesContainer}>
         <img src="/images/LegoAnnounce.png" alt="Image 1" className={styles.image} />
         <img src="/images/MilegoBlender.png" alt="Image 2" className={styles.image} />
@@ -30,22 +30,20 @@ export default function Home() {
       <h2 className={styles.subtitle}>Now Minting</h2>
       <img src="/images/DCIM_MilegoAlbum_12-17-1993.png" alt="Minting" className={styles.mintingImage} />
       <p className={styles.mintingText}>
-        Purchase your Milego NFT by Minting it on Scatter.art
+        Purchase your MiLego NFT by Minting it on Scatter.art
         <br />
         <br />
         • If you hold special NFTs you might be eligible for a FREE MILEGO! (Terms and conditions may apply)
         <br />
-        • Your Milego will be delivered to your ETHEREUM wallet!
+        • Your MiLego will be delivered to your ETHEREUM wallet!
         <br />
-        • To view your Milego, please log into Scatter.art or OpenSea.
-        <br />
-        • Milego Gallery is Coming Very Soon!
+        • To view your Milego, please log into Scatter.art or view the Gallery!
       </p>
 
       {/* Footer */}
       <footer className={styles.footer}>
         <a href="https://viralpubliclicense.org/" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>
-          VPL Milego Maker
+          VPL MiLego Maker
         </a>
         <img src="/images/privacyseal6.gif" alt="Small Image 1" className={styles.smallImage} />
         <img src="/images/truste_button.gif" alt="Small Image 2" className={styles.smallImage} />

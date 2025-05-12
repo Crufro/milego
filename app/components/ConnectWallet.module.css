@@ -1,0 +1,300 @@
+.container {
+  margin: 30px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.connectButton {
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 8px;
+  color: #000;
+  cursor: pointer;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+  box-shadow: 3px 3px 0 #000;
+}
+
+.connectButton:hover {
+  transform: scale(1.05);
+  box-shadow: 5px 5px 0 #000;
+}
+
+.connectButton:active {
+  transform: scale(0.95);
+  box-shadow: 2px 2px 0 #000;
+}
+
+.wrongNetworkButton {
+  background-color: #ff6b6b;
+  border: 2px solid #000;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+  box-shadow: 3px 3px 0 #000;
+}
+
+.accountButton {
+  background-color: #a3e635;
+  border: 2px solid #000;
+  border-radius: 8px;
+  color: #000;
+  cursor: pointer;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+  box-shadow: 3px 3px 0 #000;
+  margin-bottom: 15px;
+}
+
+.accountButton:hover {
+  transform: scale(1.05);
+  box-shadow: 5px 5px 0 #000;
+}
+
+.connectedContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+}
+
+.tokenList {
+  margin-top: 15px;
+  border: 2px solid #000;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 3px 3px 0 #000;
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tokenTitle {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0 0 20px 0;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.tokenGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+/* For smaller screens, adjust the number of columns */
+@media (max-width: 900px) {
+  .tokenGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .tokenGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.tokenLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.nftCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.2s ease;
+  padding: 10px 0;
+  border-radius: 8px;
+}
+
+.nftCard:hover {
+  background-color: #fffaed;
+  transform: translateY(-3px);
+}
+
+.tokenItem {
+  background-color: #f9f9f9;
+  border: 2px solid #000;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+  box-shadow: 0px 0px 0px #000;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.tokenItem:hover {
+  box-shadow: 6px 6px 0 #000;
+  background-color: #f9f9f9;
+}
+
+.tokenId {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.tokenItem:hover .viewButton {
+  background-color: #0066cc;
+}
+
+.noTokens {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  text-align: center;
+  color: #666;
+}
+
+.loadingText {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+.error {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  color: #e53e3e;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.totalCount {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.balanceOnly {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  margin: 15px 0;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 2px solid #000;
+  border-radius: 8px;
+  box-shadow: 3px 3px 0 #000;
+}
+
+.thumbnailContainer {
+  width: 100px;
+  height: 100px;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  background-color: #f0f0f0;
+  position: relative;
+}
+
+.thumbnail {
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  width: 100%;
+  height: 100%;
+}
+
+.tokenLink:hover .thumbnail {
+  transform: scale(1.15);
+}
+
+.viewButton {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  background-color: #3290ff;
+  color: white;
+  padding: 6px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border: 1px solid #2280ee;
+  box-shadow: 2px 2px 0 #000;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.viewButton:hover {
+  background-color: #0066cc;
+  transform: translateY(-2px);
+  box-shadow: 3px 3px 0 #000;
+}
+
+.downloadLinks {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  width: 100%;
+  padding: 0 5px;
+}
+
+.downloadButton {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12px;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  color: #000;
+  text-decoration: none;
+  border: 1px solid #000;
+  box-shadow: 1px 1px 0 #000;
+  transition: all 0.2s ease;
+}
+
+.downloadButton:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-2px);
+  box-shadow: 2px 2px 0 #000;
+} 
