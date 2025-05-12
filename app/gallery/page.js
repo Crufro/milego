@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import styles from './Gallery.module.css'; // Optional: Add styling
 import ConnectWallet from '../components/ConnectWallet';
 import NftGallery from '../components/NftGallery';
@@ -8,6 +9,10 @@ import NftGallery from '../components/NftGallery';
 export default function Gallery() {
   return (
     <div className={styles.galleryContainer}>
+      <Link href="/" className={styles.homeLink}>
+        ← Home
+      </Link>
+      
       <h1 className={styles.title}>MiLego Gallery</h1>
       <p className={styles.text}>Connect your wallet to view your MiLego NFTs.</p>
       

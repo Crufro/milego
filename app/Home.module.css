@@ -24,12 +24,14 @@
   font-family: 'Courier New', Courier, monospace; /* Use the Courier font family */
   font-size: 24px; /* Adjust the font size as needed */
   font-weight: bold; /* Make the text bold */
+  text-align: center;
+  margin: 15px 0;
 }
-
 
 .logo {
   max-width: 100%; /* Make the logo responsive */
   height: auto; /* Maintain the aspect ratio */
+  margin: 10px 0;
 }
   
 .mainContainer {
@@ -42,17 +44,24 @@
   background-image: url('/images/legobg.gif'); /* Replace with the path to your background image */
   background-size: auto; /* Set the background size to its original size */
   background-repeat: repeat; /* Make the background image repeat */
-  
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .gif {
-  /* Define styles for your GIF here, such as width, height, margin, etc. */
+  max-width: 100%;
+  height: auto;
+  margin: 10px 0;
 }
 
 .centeredText {
   font-size: 18px; /* Adjust the font size as needed */
   text-align: center;
   margin-top: 20px; /* Adjust the margin as needed */
+  width: 100%;
+  padding: 0 15px;
+  box-sizing: border-box;
 }
 
 .mintNowImage {
@@ -70,11 +79,15 @@
   transform: scale(0.95); /* Reduce the button size slightly when clicked */
 }
 
-
 .linksContainer {
   display: flex;
   justify-content: center;
   margin-top: 20px; /* Adjust the margin as needed */
+  flex-wrap: wrap; /* Allow links to wrap on small screens */
+  width: 100%;
+  gap: 15px; /* Add gap between items */
+  padding: 0 10px;
+  box-sizing: border-box;
 }
 
 .link {
@@ -100,42 +113,71 @@
   .fixedLogo {
     display: none; /* Hide the fixed logo on mobile screens */
   }
+  
+  .header {
+    font-size: 20px;
+  }
+  
+  .imagesContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .image {
+    margin: 10px 0;
+  }
 }
 
 .title {
   font-size: 24px;
   font-weight: bold;
   margin-top: 20px;
+  text-align: center;
+  width: 100%;
+  padding: 0 15px;
+  box-sizing: border-box;
 }
 
 .text {
   font-size: 18px;
   text-align: center;
   margin-top: 10px;
+  width: 100%;
+  padding: 0 15px;
+  box-sizing: border-box;
 }
 
 .imagesContainer {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
 }
 
 .image {
   max-width: 100%;
   height: auto;
   margin: 0 10px; /* Adjust the margin between images as needed */
+  object-fit: contain; /* Ensure the image is fully visible */
 }
 
 .subtitle {
   font-size: 24px;
   font-weight: bold;
   margin-top: 20px;
+  text-align: center;
+  width: 100%;
+  padding: 0 15px;
+  box-sizing: border-box;
 }
 
 .mintingImage {
   max-width: 100%;
   height: auto;
   margin-top: 10px;
+  object-fit: contain; /* Ensure the image is fully visible */
 }
 
 .mintingText {
@@ -143,6 +185,9 @@
   text-align: center;
   margin-top: 10px;
   font-weight: 550; /* Adjust the font weight to make it slightly more bold */
+  width: 100%;
+  padding: 0 15px;
+  box-sizing: border-box;
 }
 
 .footer {
@@ -150,8 +195,10 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 40px;
-  padding: 0 10px;
+  padding: 10px;
   width: 100%;
+  box-sizing: border-box;
+  flex-wrap: wrap; /* Allow footer items to wrap */
 }
 
 .footerLink {
@@ -164,8 +211,33 @@
   text-decoration: underline; /* Underline the link on hover */
 }
 
-.smallImage  {
+.smallImage {
   margin-left: 10px;
+  max-width: 60px;
+  height: auto;
+}
+
+@media (max-width: 480px) {
+  .header {
+    font-size: 18px;
+  }
+  
+  .title, .subtitle {
+    font-size: 20px;
+  }
+  
+  .text, .mintingText, .centeredText {
+    font-size: 16px;
+  }
+  
+  .footer {
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .smallImage {
+    margin: 5px;
+  }
 }
 
 .toggleContainer {
