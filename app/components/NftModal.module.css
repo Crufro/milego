@@ -58,7 +58,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-  align-items: stretch;
+  align-items: flex-start;
 }
 
 .imageContainer {
@@ -70,6 +70,9 @@
   align-items: center;
   position: relative;
   margin-bottom: 0;
+  min-height: 400px;
+  justify-content: flex-start;
+  padding-bottom: 50px;
 }
 
 .imageWrapper {
@@ -78,8 +81,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 15px;
-  min-height: 200px;
+  min-height: 300px;
+  margin-bottom: 40px;
 }
 
 .enlargedImage {
@@ -132,11 +135,11 @@
 }
 
 .prevArrow {
-  left: -10px;
+  left: -18px;
 }
 
 .nextArrow {
-  right: -10px;
+  right: -18px;
 }
 
 .navArrow:hover {
@@ -152,10 +155,15 @@
 
 .imageInfo {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 100%;
-  margin: 0 0 10px 0;
+  margin: 0;
   font-family: 'Courier New', Courier, monospace;
+  position: absolute;
+  bottom: 15px;
+  left: 10px;
+  background-color: transparent;
+  z-index: 3;
 }
 
 .imageType {
@@ -171,18 +179,23 @@
   border-radius: 4px;
   background-color: #f0f0f0;
   border: 1px solid #000;
+  margin-left: 10px;
 }
 
 .imageDots {
   display: flex;
   justify-content: center;
-  gap: 8px;
-  margin: 0 0 15px 0;
+  gap: 6px;
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
 }
 
 .dot {
-  width: 12px;
-  height: 12px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background-color: #ccc;
   border: 1px solid #000;
@@ -193,16 +206,12 @@
 
 .activeDot {
   background-color: #3290ff;
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .dot:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
   background-color: #999;
-}
-
-.activeDot:hover {
-  background-color: #3290ff;
 }
 
 .noImage {

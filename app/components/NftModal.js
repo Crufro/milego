@@ -203,15 +203,6 @@ export default function NftModal({ isOpen, onClose, tokenId, formattedId }) {
                     )}
                   </div>
                   
-                  <div className={styles.imageInfo}>
-                    <span className={styles.imageType}>{currentImage.label}</span>
-                    {availableImages.length > 1 && (
-                      <span className={styles.imageCounter}>
-                        {currentImageIndex + 1} / {availableImages.length}
-                      </span>
-                    )}
-                  </div>
-                  
                   {availableImages.length > 1 && (
                     <div className={styles.imageDots}>
                       {availableImages.map((_, index) => (
@@ -226,6 +217,15 @@ export default function NftModal({ isOpen, onClose, tokenId, formattedId }) {
                       ))}
                     </div>
                   )}
+                  
+                  <div className={styles.imageInfo}>
+                    <span className={styles.imageType}>{currentImage.label}</span>
+                    {availableImages.length > 1 && (
+                      <span className={styles.imageCounter}>
+                        {currentImageIndex + 1} / {availableImages.length}
+                      </span>
+                    )}
+                  </div>
                 </>
               ) : (
                 <div className={styles.noImage}>No images available</div>

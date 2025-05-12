@@ -10,7 +10,7 @@ const PAGE_SIZE_OPTIONS = [20, 50, 100];
 const MAX_NFT_ID = 1000; // Total number of NFTs in the collection (corrected from 4000)
 
 export default function NftGallery() {
-  const [pageSize, setPageSize] = useState(100); // Default to 100 per page
+  const [pageSize, setPageSize] = useState(20); // Default to 20 per page
   const [currentPage, setCurrentPage] = useState(1);
   const [displayedNfts, setDisplayedNfts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
